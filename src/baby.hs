@@ -39,7 +39,7 @@ addVectors :: (Double, Double) -> (Double, Double) -> (Double, Double)
 addVectors (x1,y1) (x2,y2) = (x1 + x2, y1 + y2)
 
 head' :: [a] -> a
-head' [] = error "can't call head ona an empty list"
+head' []    = error "can't call head ona an empty list"
 head' (x:_) = x
 
 tell :: (Show a) => [a] -> String
@@ -49,7 +49,7 @@ tell (x:y:[]) = "the list has two elements: " ++ show x ++ " and " ++ show y
 tell (x:y:_) = "the list is long. the first two elements are: " ++ show x ++ " and " ++ show y
 
 firstLetter :: String -> String
-firstLetter "" = "empty string, whoops"
+firstLetter ""         = "empty string, whoops"
 firstLetter all@(x:xs) = "the first letter of " ++ all ++ " is: " ++ [x]
 
 -- bmiTell :: Double -> String
@@ -104,6 +104,6 @@ cylinder r h =
 
 describeList :: [a] -> String
 describeList ls = "the list is " ++
-  case ls of [] -> "empty."
+  case ls of []  -> "empty."
              [x] -> "a singleto list."
-             xs -> "a longer list"
+             xs  -> "a longer list"

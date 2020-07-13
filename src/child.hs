@@ -1,6 +1,6 @@
 maximum' :: (Ord a) => [a] -> a
-maximum' [] = error "maximum of empty list."
-maximum' [x] = x
+maximum' []     = error "maximum of empty list."
+maximum' [x]    = x
 maximum' (x:xs) = max x (maximum' xs)
 
 replicate' :: Int -> a -> [a]
@@ -15,15 +15,15 @@ take' _ [] = []
 take' n (x:xs) = x: take' (n-1) xs
 
 reverse' :: [a] -> [a]
-reverse' [] = []
+reverse' []     = []
 reverse' (x:xs) = reverse' xs ++ [x]
 
 repeat' :: a -> [a]
 repeat' x = x : repeat' x
 
 zip' :: [a] -> [b] ->[(a,b)]
-zip' _ [] = []
-zip' [] _ = []
+zip' _ []          = []
+zip' [] _          = []
 zip' (x:xs) (y:ys) = (x,y) : zip' xs ys
 
 elem' :: (Eq a) => a -> [a] -> Bool
