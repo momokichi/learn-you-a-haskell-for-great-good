@@ -31,3 +31,13 @@ findKey :: (Eq k) => k -> [(k,v)] -> Maybe v
 findKey key xs = foldr (\(k,v) acc -> if key == k then Just v else acc) Nothing xs
 
 phoneBook :: Map.Map String String
+phoneBook = Map.fromList $
+  [
+    ("betty", "333-3343"),
+    ("boone", "366-7676"),
+    ("pasty", "000-4545"),
+    ("pasl","555-5342")
+  ]
+
+string2digits :: String -> [Int]
+string2digits = map digitToInt . filter isDigit
